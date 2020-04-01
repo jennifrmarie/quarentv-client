@@ -1,26 +1,64 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import AppContext from './AppContext'
+import Dashboard from './Dashboard/Dashboard'
+import { Route } from 'react-router-dom';
+import LandingPage from './LandingPage/LandingPage'
+import NavBar from './NavBar/NavBar'
+import dummyStore from './dummy-store';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    entries: [],
+    entry: '',
+  }
+  componentDidMount() {
+    // fake date loading from API call
+    setTimeout(() => this.setState(dummyStore), 600);
+  }
+  handleAddEntry = entry => {
+    this.setState({
+      entries: [
+        ...this.state.entries,
+        entry
+      ]
+    })
+  }
+
+  removeEntry = (entryId) => {
+    this.setState({
+      entries: this.state.entries.filter(entry => entry.id !== entryId)
+    })
+  }
+
+  render() {
+    const value = {
+      entries: this.state.entries,
+      entry: this.state.entry,
+      handleAddEntry: this.handleAddEntry,
+      removeEntry: this.removeEntry,
+    }
+    return (
+      <AppContext.Provider value={value}>
+        <div>
+          <nav>
+              <NavBar />
+            </nav>
+          <header>
+            
+          </header>
+          <main>
+            <Route 
+              exact path='/'
+              component={LandingPage}
+            />
+            <Route
+              exact path='/dashboard'
+              component={Dashboard}
+            />
+          </main>
+        </div>
+      </AppContext.Provider>
+    )
+  }
 }
 
-export default App;
