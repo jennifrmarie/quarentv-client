@@ -59,7 +59,7 @@ export default class App extends Component {
              exact path='/dashboard'
              component={NavBar}
             />
-          <main>
+          <div className="div_main">
             <Route 
               exact path='/'
               component={LandingPage}
@@ -68,7 +68,7 @@ export default class App extends Component {
               exact path='/dashboard'
               component={Dashboard}
             />
-          </main>
+          </div>
         </div>
       </AppContext.Provider>
     )

@@ -42,7 +42,7 @@ static contextType = AppContext
   
     render() {
         return (
-            <main role="main">
+            <div role="main" className="div_main">
                     
                     <form onSubmit={this.handleSubmit} className='watch-form'>
                     <div className="form__section">
@@ -67,7 +67,7 @@ static contextType = AppContext
                     </form>
 
               <DashboardList />
-            </main>
+            </div>
         )
     }
 }
