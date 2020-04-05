@@ -11,7 +11,7 @@
     line-height: 1.5;
   }
 
-  main {
+  .div_main {
     display: flex;
     flex-direction: column;
     margin-top: 20px;

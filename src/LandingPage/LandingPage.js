@@ -142,7 +142,7 @@ export default class LandingPage extends Component {
 render() {
   return (
   <div id="main-registration-container">
-      <header role="banner" className="banner">
+      <header className="banner">
           <h1 className="app__title">QuarenTV</h1>
           <h4 className="app__header">Let's wash our hands, stay inside, and get to watching. What else are you gonna do?</h4>
           </header>

@@ -42,7 +42,7 @@ static contextType = AppContext
   
     render() {
         return (
-            <div role="main" className="div_main">
+            <div className="div_main">
                     
                     <form onSubmit={this.handleSubmit} className='watch-form'>
                     <div className="form__section">
