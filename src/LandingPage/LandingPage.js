@@ -146,8 +146,8 @@ render() {
           <h1 className="app__title">QuarenTV</h1>
           <h4 className="app__header">Let's wash our hands, stay inside, and get to watching. What else are you gonna do?</h4>
           </header>
-          <section className="login_section">
-               <form id="login_form" method="post"  name="userRegistrationForm"  onSubmit= {this.submituserLoginForm} >
+          <div className="login_section">
+               <form id="login_form" name="userRegistrationForm"  onSubmit= {this.submituserLoginForm} >
                 <label>Name</label>
                   <input className="login_input" type="text" name="username_login" value={this.state.fields.username_login} onChange={this.handleChange} />
                   <div className="errorMsg">{this.state.errors.username_login}</div>
@@ -156,10 +156,10 @@ render() {
                   <div className="errorMsg">{this.state.errors.password_login}</div>
                   <button className="login_button">Log In</button>
                 </form>
-            </section>
+            </div>
               <div id="register">
                   <h3>Don't have an account? Register for one!</h3>
-                  <form method="post"  name="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
+                  <form name="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
                   <label>Name</label>
                   <input type="text" name="username" value={this.state.fields.username} onChange={this.handleChange} />
                   <div className="errorMsg">{this.state.errors.username}</div>
