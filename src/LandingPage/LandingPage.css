@@ -7,7 +7,7 @@
   #login_form {
     display: flex;
     background-color: rgb(52, 1, 146);
-    opacity: 90%;
+    opacity: 0.9;
     flex-direction: column;
     width: 80%;
     margin-top: -10px;
@@ -20,6 +20,7 @@
     justify-content: center;
     border-radius: .3em;
     box-shadow: 0 10px 12px 1px black;
+    z-index: 100;
   }
 
   .banner {
@@ -72,11 +73,9 @@
      margin-bottom: 0 auto;
      margin-top: 30px;
      height: 40vh;
-     /* margin-top: 100px; */
-     /* opacity: 80%; */
      background-color: black;
      padding-bottom: 20px;
-     opacity: 95%;
+     opacity: 0.95;
      color: white;
    }
 
