@@ -1,0 +1,22 @@
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+    padding: 10px;
+  }
+
+  .nav__title {
+    font-family: 'Faster One';
+    float: left;
+  }
+
+  .logout_button {
+      float: right;
+      background-color: black;
+      color: white;
+      padding: 0 10px 0 10px;
+  }

@@ -1,49 +1,102 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Open Sans",
-    sans-serif;
-    font-size: 20px;
-    color: #444;
-    text-align: center;
-    line-height: 1.5;
-  }
-  
-  nav,
-  footer {
-    padding: 1% 0;
-    background-color: #aaa;
-  }
-  
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-  }
+
   
   header {
-    padding: 45px 15px;
+    padding: 25px 15px;
   }
   
-  section {
-    min-height: 200px;
-    padding: 30px 15px;
-    background-color: #bbb;
+  #login_form {
+    display: flex;
+    background-color: rgb(52, 1, 146);
+    opacity: 90%;
+    flex-direction: column;
+    width: 80%;
+    margin-top: -10px;
+    max-width: 500px;
+    color: white;
+    align-self: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    align-content: center;
+    justify-content: center;
+    border-radius: .3em;
+    box-shadow: 0 10px 12px 1px black;
   }
+
+  .banner {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+  }
+
+  .app__header {
+    font-family: 'Coda';
+    display: flex;
+    align-self: center;
+    margin-top: -15px;
+    background-color: black;
+    padding: 0;
+    width: fit-content;
   
-  section:nth-child(even) {
-    background-color: #ddd;
   }
-  
-  p {
-    margin: 0 auto;
-    max-width: 650px;
+
+  .login_input {
+    width: 60%;
+    align-self: center;
+    margin-bottom: 5px;
   }
-  
-  p + p {
-    margin-top: 15px;
+
+  .login_section {
+    display: flex;
+    
+    justify-content: center;
   }
+
+  .app__title {
+    font-family: 'Faster One', cursive;
+    font-size: 50px;
+  }
+
+  .login_button {
+    color: black;
+    background-color: white;
+    width: 40%;
+    align-self: center;
+    font-size: calc(12px + .2vw);
+    padding: calc(6px - .2vw);
+    margin: 20px;
+  }
+   #register {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     margin-bottom: 0 auto;
+     margin-top: 30px;
+     height: 40vh;
+     /* margin-top: 100px; */
+     /* opacity: 80%; */
+     background-color: black;
+     padding-bottom: 20px;
+     opacity: 95%;
+     color: white;
+   }
+
+  #main-registration-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    height: 100vh;
+    background-size: contain;
+    background-image: url('https://i.imgur.com/D4C9FZW.jpg');
+  }
+
+  .register_button {
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    padding: 10px;
+    
+  }
+
+
+

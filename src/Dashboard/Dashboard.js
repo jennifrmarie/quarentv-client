@@ -32,25 +32,24 @@ static contextType = AppContext
     }
     this.context.handleAddEntry(newEntry)
     console.log(newEntry)
+    e.target.reset()
     this.setState({
       title: '',
       strmservice: '',
 
     })
   }
-
-
-    
-
+  
     render() {
         return (
             <main role="main">
-            <section>
-                    <h3>What do you want to watch?</h3>
-                    <form onSubmit={this.handleSubmit} classclass='watch-form'>
-                        <div>
-                          <label htmlFor="title">Title</label>
-                          <input placeholder='Title' type="text" name='title' id='title' />
+                    
+                    <form onSubmit={this.handleSubmit} className='watch-form'>
+                    <div className="form__section">
+                    <h3 className="form__header">What do you want to watch?</h3>
+                        <div className="title_section">
+                          <label className="title_label" htmlFor="title">Title</label>
+                          <input className="title_input" placeholder='Title' type="text" name='title' id='title' />
                         </div>
                         <div>
                           <label htmlFor="streaming-service">Streaming Service</label>
@@ -63,9 +62,9 @@ static contextType = AppContext
                             <option value="other">other</option>
                           </select>
                         </div>
-                        <button type='submit'>Add to list</button>
+                        <button className="submit_button" type='submit'>Add to list</button>
+                      </div>
                     </form>
-              </section>
 
               <DashboardList />
             </main>
