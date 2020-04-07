@@ -9,13 +9,14 @@
     background-color: rgb(52, 1, 146);
     opacity: 0.9;
     flex-direction: column;
-    width: 80%;
-    margin-top: -40px;
-    font-size: calc(20px + .5vw);
+    width: 70%;
+    height: calc(100% + 1vw);
+    margin-top: -30px;
+    font-size: calc(15px + .5vw);
     max-width: 500px;
     color: white;
     align-self: center;
-    padding-top: 20px;
+    padding-top: 35px;
     padding-bottom: 10px;
     align-content: center;
     justify-content: center;
@@ -25,7 +26,7 @@
   }
 
   .userRegistrationForm {
-    font-size: calc(20px + .5vw);
+    font-size: calc(18px + .5vw);
   }
   .banner {
     display: flex;
@@ -37,7 +38,7 @@
     font-family: 'Coda';
     display: flex;
     margin-bottom: 5px;
-    font-size: calc(20px + .5vw);
+    font-size: calc(18px + .5vw);
     align-self: center;
     margin-top: -15px;
     background-color: black;
@@ -59,13 +60,13 @@
 
   .login_section {
     display: flex;
-    
+    height: calc(20% + 1vw);
     justify-content: center;
   }
 
   .app__title {
     font-family: 'Faster One', cursive;
-    font-size: calc(40px + 1vw);
+    font-size: calc(30px + 1vw);
     letter-spacing: .2em;
   }
 
@@ -82,7 +83,7 @@
     font-size: calc(15px + .5vw);
     font-weight: 600;
     padding: calc(6px - .2vw);
-    margin: 20px;
+    margin: 15px;
   }
 
   .login_button:hover {
@@ -93,7 +94,7 @@
      flex-direction: column;
      justify-content: center;
      margin-bottom: 0 auto;
-     margin-top: 30px;
+     margin-top: -10px;
      height: 40vh;
      background-color: black;
      padding-bottom: 20px;
@@ -102,12 +103,17 @@
    }
 
    .email_label {
-     margin-right: 57px;
+     margin-right: 40px;
+     margin-left: 6px;
    }
 
    .registration_forminput {
      margin-left: 10px;
-     font-size: 15px;
+     font-size: calc(12px + .4vw);
+   }
+
+   .registration__header {
+     font-size: calc(18px + .5vw)
    }
 
    .login_section, #register {
@@ -143,5 +149,14 @@
     cursor: pointer;
   }
 
+  @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) {
+    #login_form {
+      opacity: 1.0;
+    }
 
+
+  }
 

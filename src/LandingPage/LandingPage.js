@@ -187,7 +187,7 @@ render() {
                 </form>
             </div>
               <div id="register">
-                  <h3>Don't have an account? Register for one!</h3>
+                  <h3 className="registration__header">Don't have an account? Register for one!</h3>
                   <form className="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
                   <label className="email_label">Email:</label>
                   <input className="registration_forminput" type="text" name="emailid" value={this.state.fields.emailid} onChange={this.handleChange}  />
