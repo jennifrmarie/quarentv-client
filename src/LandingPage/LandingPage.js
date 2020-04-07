@@ -76,7 +76,6 @@ export default class LandingPage extends Component {
         // const password = e.target.password.value
         // const data = { user_name, password }
         const data = this.state.fields
-        console.log(data)
 
         fetch(`${config.API_ENDPOINT}/users`, {
             method: 'post',
@@ -97,7 +96,6 @@ export default class LandingPage extends Component {
         .catch(error => {
             alert(JSON.stringify(error))          
           })
-        this.props.history.push('/dashboard')
     }
   }
   
