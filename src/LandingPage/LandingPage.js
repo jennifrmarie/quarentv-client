@@ -58,7 +58,7 @@ export default class LandingPage extends Component {
             localStorage.authToken = data.authToken;
             this.props.history.push('/dashboard')
         })
-        
+        .catch(err => alert('Incorrect username or password'))
     }
 
   }

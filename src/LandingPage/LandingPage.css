@@ -36,6 +36,7 @@
   .app__header {
     font-family: 'Coda';
     display: flex;
+    margin-bottom: 5px;
     font-size: calc(20px + .5vw);
     align-self: center;
     margin-top: -15px;
