@@ -10,7 +10,8 @@
     opacity: 0.9;
     flex-direction: column;
     width: 80%;
-    margin-top: -10px;
+    margin-top: -40px;
+    font-size: calc(20px + .5vw);
     max-width: 500px;
     color: white;
     align-self: center;
@@ -23,6 +24,9 @@
     z-index: 100;
   }
 
+  .userRegistrationForm {
+    font-size: calc(20px + .5vw)
+  }
   .banner {
     display: flex;
     align-content: center;
@@ -32,6 +36,7 @@
   .app__header {
     font-family: 'Coda';
     display: flex;
+    font-size: calc(20px + .5vw);
     align-self: center;
     margin-top: -15px;
     background-color: black;
@@ -42,6 +47,7 @@
 
   .login_input {
     width: 60%;
+    float: right;
     align-self: center;
     margin-bottom: 5px;
   }
@@ -54,17 +60,24 @@
 
   .app__title {
     font-family: 'Faster One', cursive;
-    font-size: 50px;
+    font-size: calc(40px + 1vw);
+    letter-spacing: .2em;
   }
 
   .login_button {
-    color: black;
-    background-color: white;
-    width: 40%;
+    color: white;
+    border: 3px solid white;
+    background-color: black;
+    width: 30%;
     align-self: center;
-    font-size: calc(12px + .2vw);
+    font-size: calc(15px + .5vw);
+    font-weight: 600;
     padding: calc(6px - .2vw);
     margin: 20px;
+  }
+
+  .login_button:hover {
+    cursor: pointer;
   }
    #register {
      display: flex;
@@ -79,6 +92,19 @@
      color: white;
    }
 
+   .email_label {
+     margin-right: 57px;
+   }
+
+   .registration_forminput {
+     margin-left: 10px;
+     font-size: 15px;
+   }
+
+   .login_section, #register {
+     font-family: 'Gugi';
+   }
+
   #main-registration-container {
     display: flex;
     flex-direction: column;
@@ -91,10 +117,19 @@
 
   .register_button {
     color: white;
+    border: 3px solid white;
     background-color: black;
-    font-size: 15px;
-    padding: 10px;
+    margin-top: 25px;
+    width: 30%;
+    align-self: center;
+    font-size: calc(15px + .5vw);
+    font-weight: 600;
+    padding: calc(6px - .2vw);
     
+  }
+
+  .register_button:hover {
+    cursor: pointer;
   }
 
 

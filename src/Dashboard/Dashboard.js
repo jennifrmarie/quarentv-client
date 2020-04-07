@@ -3,6 +3,7 @@ import './Dashboard.css'
 import {v1 as uuid} from 'uuid'
 import moment from 'moment';
 import AppContext from '../AppContext'
+import ListNav from '../ListNav/ListNav'
 import DashboardList from '../DashboardList/DashboardList'
 
 export default class Dashboard extends Component {
@@ -18,17 +19,13 @@ export default class Dashboard extends Component {
 
 static contextType = AppContext
 
-
-
-
-
   handleSubmit = e => {
     e.preventDefault()
     const newEntry = {
       id: uuid(),
       title: e.target['title'].value,
       strmservice: e.target['streaming-service'].value,
-      // date: moment.format('MM-DD-YYYY')
+      date: moment(),
     }
     this.context.handleAddEntry(newEntry)
     console.log(newEntry)
@@ -36,6 +33,7 @@ static contextType = AppContext
     this.setState({
       title: '',
       strmservice: '',
+      date: ''
 
     })
   }
@@ -54,6 +52,7 @@ static contextType = AppContext
                         <div>
                           <label htmlFor="streaming-service">Streaming Service</label>
                           <select id="streaming-service" name="streaming-service">
+                          <option value="...">...</option>
                             <option value="netflix">Netflix</option>
                             <option value="hulu">Hulu</option>
                             <option value="amazon-prime">Amazon Prime</option>
@@ -66,7 +65,7 @@ static contextType = AppContext
                       </div>
                     </form>
 
-              <DashboardList />
+              <ListNav /> 
             </div>
         )
     }

@@ -6,6 +6,9 @@ const AppContext = React.createContext({
     handleAddEntry: () => {},
     removeEntry: () => {},
     watched: [],
+    getItems: () => {},
+    editItem: () => {},
+    addScore: () => {},
 })
 
 export default AppContext

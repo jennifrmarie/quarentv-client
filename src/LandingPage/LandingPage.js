@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './LandingPage.css'
+import config from '../config'
 
 export default class LandingPage extends Component {
   constructor() {
@@ -30,10 +31,35 @@ export default class LandingPage extends Component {
     if (this.validateLoginForm()) {
         let fields = {};
     
-        fields["username_login"] = "";
+        fields["user_name_login"] = "";
         fields["password_login"] = "";
         this.setState({fields:fields});
-        this.props.history.push('/dashboard')
+
+        e.preventDefault()
+        const data = {
+          user_name: this.state.fields.user_name_login,
+          password: this.state.fields.password_login,
+        }
+        
+        fetch(`${config.API_ENDPOINT}/auth/login`, {
+            method: 'post',
+            headers: {
+                "content-type": "application/json",
+            },
+  
+            body: JSON.stringify(data)
+        })
+        .then(res => {
+          console.log(res)
+          if (!res.ok)
+            return res.json().then(e => Promise.reject(e))
+            return res.json()
+        })
+        .then(data => {
+            localStorage.authToken = data.authToken;
+            this.props.history.push('/dashboard')
+        })
+        
     }
 
   }
@@ -42,29 +68,56 @@ export default class LandingPage extends Component {
     e.preventDefault();
     if (this.validateForm()) {
         let fields = {};
-        fields["username"] = "";
+        fields["user_name"] = "";
         fields["password"] = "";
         fields["emailid"] = "";
         this.setState({fields:fields});
+
+        // const user_name = e.target.user_name.value
+        // const password = e.target.password.value
+        // const data = { user_name, password }
+        const data = this.state.fields
+        console.log(data)
+
+        fetch(`${config.API_ENDPOINT}/users`, {
+            method: 'post',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+            
+        })
+        .then(res => {
+            console.log(res.user_name)
+            if(!res.ok) 
+              return res.json().then(e => Promise.reject(e))
+              return res.json()
+          })
+        .then(data => {
+            this.props.history.push('/')
+        })
+        .catch(error => {
+            alert(JSON.stringify(error))          
+          })
         this.props.history.push('/dashboard')
     }
-
   }
+  
 
   validateLoginForm() {
     let fields = this.state.fields;
     let errors = {};
     let formIsValid = true;
 
-    if (!fields["username_login"]) {
+    if (!fields["user_name_login"]) {
       formIsValid = false;
-      errors["username_login"] = "*Please enter your username.";
+      errors["user_name_login"] = "*Please enter your username.";
     }
 
-    if (typeof fields["username_login"] !== "undefined") {
-      if (!fields["username_login"].match(/^[a-zA-Z ]*$/)) {
+    if (typeof fields["user_name_login"] !== "undefined") {
+      if (!fields["user_name_login"].match(/^[a-zA-Z ]*$/)) {
         formIsValid = false;
-        errors["username_login"] = "*Please enter alphabet characters only.";
+        errors["user_name_login"] = "*Please enter alphabet characters only.";
       }
     }
 
@@ -92,15 +145,15 @@ export default class LandingPage extends Component {
     let errors = {};
     let formIsValid = true;
 
-    if (!fields["username"]) {
+    if (!fields["user_name"]) {
       formIsValid = false;
-      errors["username"] = "*Please enter your username.";
+      errors["user_name"] = "*Please enter your username.";
     }
 
-    if (typeof fields["username"] !== "undefined") {
-      if (!fields["username"].match(/^[a-zA-Z ]*$/)) {
+    if (typeof fields["user_name"] !== "undefined") {
+      if (!fields["user_name"].match(/^[a-zA-Z ]*$/)) {
         formIsValid = false;
-        errors["username"] = "*Please enter alphabet characters only.";
+        errors["user_name"] = "*Please enter alphabet characters only.";
       }
     }
 
@@ -144,14 +197,14 @@ render() {
   <div id="main-registration-container">
       <header className="banner">
           <h1 className="app__title">QuarenTV</h1>
-          <h4 className="app__header">Let's wash our hands, stay inside, and get to watching. What else are you gonna do?</h4>
+          <h4 className="app__header">Let's wash our hands, stay inside, and chillout. What else are you gonna do?</h4>
           </header>
           <div className="login_section">
                <form id="login_form" name="userRegistrationForm"  onSubmit= {this.submituserLoginForm} >
-                <label>Name</label>
-                  <input className="login_input" type="text" name="username_login" value={this.state.fields.username_login} onChange={this.handleChange} />
-                  <div className="errorMsg">{this.state.errors.username_login}</div>
-                  <label>Password</label>
+                <label>Username:</label>
+                  <input className="login_input" type="text" name="user_name_login" value={this.state.fields.user_name_login} onChange={this.handleChange} />
+                  <div className="errorMsg">{this.state.errors.user_name_login}</div>
+                  <label>Password:</label>
                   <input className="login_input" type="password" name="password_login" value={this.state.fields.password_login} onChange={this.handleChange} />
                   <div className="errorMsg">{this.state.errors.password_login}</div>
                   <button className="login_button">Log In</button>
@@ -159,15 +212,16 @@ render() {
             </div>
               <div id="register">
                   <h3>Don't have an account? Register for one!</h3>
-                  <form name="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
-                  <label>Name</label>
-                  <input type="text" name="username" value={this.state.fields.username} onChange={this.handleChange} />
-                  <div className="errorMsg">{this.state.errors.username}</div>
-                  <label>Email:</label>
-                  <input type="text" name="emailid" value={this.state.fields.emailid} onChange={this.handleChange}  />
+                  <form className="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
+                  <label className="email_label">Email:</label>
+                  <input className="registration_forminput" type="text" name="emailid" value={this.state.fields.emailid} onChange={this.handleChange}  />
                   <div className="errorMsg">{this.state.errors.emailid}</div>
-                  <label>Password</label>
-                  <input type="password" name="password" value={this.state.fields.password} onChange={this.handleChange} />
+                  <label>Username:</label>
+                  <input className="registration_forminput" type="text" name="user_name" value={this.state.fields.user_name} onChange={this.handleChange} />
+                  <div className="errorMsg">{this.state.errors.user_name}</div>
+                  
+                  <label>Password:</label>
+                  <input className="registration_forminput" type="password" name="password" value={this.state.fields.password} onChange={this.handleChange} />
                   <div className="errorMsg">{this.state.errors.password}</div>
                   <button className="register_button">Register</button>
                   </form>

@@ -1,16 +1,23 @@
 .watchlist_main {
     list-style: none;
+    align-self: center;
+    border: 2px solid white;
+    margin: 5px;
+    width: 100%;
     /* text-align: left; */
 }
 
 .DashboardList_list {
-    /* text-align: left; */
+    font-family: 'Gugi';
+    letter-spacing: .5em;
+    width: 80%;
     background: linear-gradient(
         to top,
         rgba(62, 8, 71, 0.979),
         rgba(216, 13, 131, 0.6)
       );
-    overflow-y: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
     width: 50%;
     margin: 0;
 }
@@ -31,9 +38,30 @@
 
 .scoreboard__title {
     margin-top: 100px;
+    margin-left: 40px;
+    
 }
+.scoreboard_section > .scoreboard__title {
+
+    width: 92%;
+    padding: 20px 10px;
+    background: inherit;
+    background-attachment: fixed;
+  }
+  .scoreboard_section > .scoreboard__title::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-attachment: fixed;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+  }
 
 .scoreboard_section {
+    font-family: Audiowide;
+    display: block;
+    letter-spacing: .5em;
     /* margin-left: 20px; */
     text-align: center;
     padding-right: 220px;
@@ -56,6 +84,31 @@
     margin: 0
 }
 
+h2 {
+
+    font-size: 1.5em;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.delete_button {
+    float: right;
+    margin-right: 20px;
+    padding-top: 15px;
+    
+}
+li.scoreboard__list {
+    margin: 21px;
+}
+
+.list__title {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
@@ -67,13 +120,54 @@
     
 }
 
+.scoreboard_section > .scoreboard__title {
 
+    width: 100%;
+    /* padding: 20px 10px; */
+    background: inherit;
+    position: absolute;
+    
+    bottom: -200px;
+    left: -40px;
+    background-attachment: fixed;
+  }
+  .scoreboard_section > .scoreboard__title::before {
+    content: "";
+    /* width: 10%; */
+    height: 40%;
+    padding-left: 10px;
+    background: inherit;
+    position: absolute;
+    top: 0px;
+    /* left: 200px; */
+    right: 50px;
+    background-attachment: fixed;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+  }
+  .DashboardList_list {
+    width: 100%;
+  }
+
+  .watchlist_main {
+      width: 100%;
+  }
+
+  ul {
+    /* display: flex; */
+    list-style-type: disc;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
 
 .scoreboard_section {
-    display: flex;
-    flex-direction: row;
+    text-align: center;
+    /* display: flex; */
     height: 100vh;
-    padding-top: 10px;
+    padding-bottom: 0;
     width: 100%;
     background: linear-gradient(
         to bottom,
@@ -83,26 +177,31 @@
     background-size: contain;
     background-repeat: no-repeat;
     font-size: 15px;
-    text-align: left;
-    padding-left: 20px;
+    /* text-align: left; */
+    /* padding-left: 20px; */
 }
 
-p {
+
+.scoreboard_list_section {
     display: flex;
-    margin-right: 20px;
-    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-between;
+    margin-top: 50px;
+    width: 70%;
+    margin-left: 15px;
 }
 
-.scoreboard__title {
-    writing-mode: vertical-rl;
-  text-orientation: upright;
-    margin-top: 20px;
-    font-size: 15px
+h2.scoreboard__title {
+    padding: 0px 0px;
+    margin-block-start: 0em;
 }
+
 
 .DashboardList_list {
     overflow: auto;
     width: 100%;
+    height: 500px;
     font-size: 15px;
     padding-bottom: 20px;
     text-align: left;
@@ -110,6 +209,81 @@ p {
 
 .list__title {
     text-align: center;
+    
 }
 
+}
+
+@media (min-width: 768px) and (max-width: 1270px) {
+    .DashboardListNav {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .DashboardList_list {
+        width: 100%;
+        height: 100vh;
+        
+    }
+    .watchlist_main {
+        font-size: 20px;
+        margin-bottom: 10px;
+        
+        width: 95%;
+    }
+
+    .scoreboard_section > .scoreboard__title {
+        width: 91%;
+        padding: 20px 10px;
+        background: inherit;
+        background-attachment: fixed;
+      }
+      .scoreboard_section > .scoreboard__title::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        background-attachment: fixed;
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+      }
+      .scoreboard_section {
+          padding-top: 20px;
+          background-size: contain;
+          background-position: 60%;
+          align-content: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          height: 100vh;
+          padding-right: 50px;
+      }
+
+      .scoreboard_list_section {
+          width: 67%;
+          font-size: 20px;
+          margin-right: 120px;
+      }
+
+      .scoreboard__title {
+          margin-top: 25px;
+          margin-bottom: 20px;
+      }
+      li.scoreboard__list {
+        margin: 21px;
+    }
+}
+
+@media (min-width: 1271px) and (max-width: 1767px) {
+    .scoreboard_title {
+        width: 100%;
+    }
+    .scoreboard_section > .scoreboard__title {
+        width: 140%;
+    }
+    .scoreboard_list_section {
+        width: 110%;
+        margin-left: 35px;
+    }
 }
