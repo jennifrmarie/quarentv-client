@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="DashboardListNav"
+>
+  <ul
+    className="DashboardList_list"
+  >
+    <h2
+      className="list__title"
+    >
+      Get to work!
+    </h2>
+  </ul>
+  <section
+    className="scoreboard_section"
+  >
+    <h2
+      className="scoreboard__title"
+    >
+      Scoreboard
+    </h2>
+    <ul
+      className="scoreboard_list_section"
+    >
+      <div>
+        Score: 
+        0
+      </div>
+      
+
+      
+
+    </ul>
+  </section>
+</div>
+`;

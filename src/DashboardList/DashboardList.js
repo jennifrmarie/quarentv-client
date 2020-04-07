@@ -3,7 +3,6 @@ import AppContext from '../AppContext'
 import './DashboardList.css'
 
 import ListNav from '../ListNav/ListNav'
-import WatchList from '../WatchList/WatchList'
 
 export default class DashboardList extends Component {
     static contextType = AppContext

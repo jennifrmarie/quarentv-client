@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<nav>
+  <span
+    className="nav__title"
+    onClick={[Function]}
+  >
+    QuarenTV
+  </span>
+  <div
+    className="logout_button"
+    onClick={[Function]}
+  >
+    Logout
+  </div>
+</nav>
+`;

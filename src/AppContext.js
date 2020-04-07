@@ -9,6 +9,8 @@ const AppContext = React.createContext({
     getItems: () => {},
     editItem: () => {},
     addScore: () => {},
+    score: 0,
+    userBadges: [],
 })
 
 export default AppContext

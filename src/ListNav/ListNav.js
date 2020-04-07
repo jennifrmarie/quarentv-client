@@ -3,25 +3,10 @@ import moment from 'moment'
 import AppContext from '../AppContext'
 import './ListNav.css'
 import config from '../config'
-import WatchList from '../WatchList/WatchList'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class ListNav extends Component {
     static contextType = AppContext
-    constructor(props) {
-        super(props);
-        this.state = {
-          score: 400,
-          entries: [],
-          badges: [
-            {id: 1, score: 500, name: 'badge1', img: <FontAwesomeIcon icon="thumbs-up"></FontAwesomeIcon>},
-            {id: 2, score: 1000, name: 'badge2', img: <FontAwesomeIcon icon="thumbs-up"></FontAwesomeIcon>},
-            {id: 3, score: 1500, name: 'badge3', img: <FontAwesomeIcon icon="thumbs-up"></FontAwesomeIcon>},
-            {id: 4, score: 2000, name: 'badge4', img: <FontAwesomeIcon icon="thumbs-up"></FontAwesomeIcon>},
-          ],
-          userBadges: [],
-        }
-    }
 
     handleUnwatchButton = (entryId) => {
         this.updateScore(-100)
@@ -41,18 +26,8 @@ export default class ListNav extends Component {
 
     updateScore(points) {
 
-        const newScore = this.state.score + points
-        const newBadge = this.state.badges
-        const newBadges = this.state.badges.filter(b => b.score <= newScore)
-        const nextBadges = this.state.badges.filter(b => b.score > newScore)
-        let nextMessage
-        let badgesMessage;
-        if (newBadges.length > this.state.userBadges.length) {
-            badgesMessage = `You got a new badge!: '${newBadges[newBadges.length - 1].name}'` 
-        }
-        if (nextBadges.length > 0) {
-            nextMessage = `You need ${nextBadges[0].score - newScore} points til your next badge` 
-        }
+        const newScore = this.context.score + points
+        
         return fetch(`${config.API_ENDPOINT}/users/score`, {
             method: 'post',
             headers: {
@@ -62,18 +37,12 @@ export default class ListNav extends Component {
             
             body: JSON.stringify({
                 score: newScore,
-                badge: newBadge
             })
             
         })
         .then(entry => {
-          this.setState({
-            score: newScore,
-            badge: newBadge,
-            userBadges: newBadges,
-            badgesMessage: badgesMessage,
-            nextMessage: nextMessage
-          })
+            this.context.addScore(newScore)
+          
           })
         .catch(error => {
           alert(JSON.stringify(error)) 
@@ -103,16 +72,17 @@ export default class ListNav extends Component {
                 </ul>
                 
                 <section className="scoreboard_section">
-                        <h2 className="scoreboard__title">Scoreboard</h2>
-                        <ul className="scoreboard_list_section">
-                        <div>Score: {this.state.score}</div>{'\n'}
-                        {this.state.userBadges.map(badge => (
+                    <h2 className="scoreboard__title">Scoreboard</h2>
+                    <ul className="scoreboard_list_section">
+                        <div>Score: {this.context.score}</div>{'\n'}
+                        {this.context.userBadges.map(badge => (
                         <li className="scoreboard__list">
-                            {this.state.badgesMessage}{'\n'}
+                            {this.context.badgesMessage}{'\n'}
                             {badge.img}
                         </li>
                          ))}{'\n'}
-                        {this.state.nextMessage}</ul>  
+                        {this.context.nextMessage}
+                    </ul>  
                 </section>
                   {/* <section className="watched_list"> */}
                   {/* <WatchList 

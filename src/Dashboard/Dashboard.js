@@ -4,7 +4,6 @@ import {v1 as uuid} from 'uuid'
 import moment from 'moment';
 import AppContext from '../AppContext'
 import ListNav from '../ListNav/ListNav'
-import DashboardList from '../DashboardList/DashboardList'
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -47,7 +46,7 @@ static contextType = AppContext
                     <h3 className="form__header">What do you want to watch?</h3>
                         <div className="title_section">
                           <label className="title_label" htmlFor="title">Title</label>
-                          <input className="title_input" placeholder='Title' type="text" name='title' id='title' />
+                          <input className="title_input" placeholder='Title' type="text" required name='title' id='title' />
                         </div>
                         <div>
                           <label htmlFor="streaming-service">Streaming Service</label>

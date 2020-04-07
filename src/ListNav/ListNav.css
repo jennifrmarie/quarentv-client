@@ -7,6 +7,32 @@
     /* text-align: left; */
 }
 
+body {
+    --scrollbarBG: rgb(11, 3, 39);
+    --thumbBG: rgb(230, 224, 231);
+  }
+  body::-webkit-scrollbar {
+    width: 15px;
+  }
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+  }
+
+  .DashboardList_list::-webkit-scrollbar-track {
+      background: rgb(11, 3, 39);
+  }
+  .DashboardList_list::-webkit-scrollbar-thumb {
+      background-color: white;
+  }
 .DashboardList_list {
     font-family: 'Gugi';
     letter-spacing: .5em;
@@ -16,7 +42,6 @@
         rgba(62, 8, 71, 0.979),
         rgba(216, 13, 131, 0.6)
       );
-    overflow-y: scroll;
     overflow-x: hidden;
     width: 50%;
     margin: 0;
@@ -286,4 +311,56 @@ h2.scoreboard__title {
         width: 110%;
         margin-left: 35px;
     }
+}
+
+@media only screen and (min-device-width: 319px) and (max-device-width: 568px) 
+and (-webkit-device-pixel-ratio: 2){
+    .DashboardListNav {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .DashboardList_list {
+        display: flex;
+        flex-direction: column;
+        font-size: 15px;
+        width: 100%;
+        height: 50vh;
+    }
+    .list__title {
+        font-size: 16px;
+        width: 100%;
+    }
+    .watchlist_main {
+        width: 100%;
+        margin-right: 45px;
+    }
+
+
+    .scoreboard_section {
+        background-size: contain;
+        background-position-x: center;
+        background-position-y: bottom;
+        width: 100%;
+        height: 50vh;
+    }
+    .scoreboard__title {
+        font-size: 10px;
+    }
+    .scoreboard_section > .scoreboard__title {
+        width: 100%;
+        padding: 20px 10px;
+        background: inherit;
+        background-attachment: fixed;
+      }
+      .scoreboard_section > .scoreboard__title::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        background-attachment: fixed;
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+      }
 }
