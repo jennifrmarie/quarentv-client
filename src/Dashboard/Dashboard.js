@@ -27,7 +27,6 @@ static contextType = AppContext
       date: moment(),
     }
     this.context.handleAddEntry(newEntry)
-    console.log(newEntry)
     e.target.reset()
     this.setState({
       title: '',
