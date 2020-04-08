@@ -8,6 +8,7 @@ export default class LandingPage extends Component {
     this.state = {
       fields: {},
       errors: {},
+      message: ''
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -126,8 +127,13 @@ export default class LandingPage extends Component {
 
     let fields = this.state.fields;
     let errors = {};
+    let message = {};
     let formIsValid = true;
-
+    if (formIsValid === true) {
+      message["success_message"] = "Account created successfully, please log in!"
+      }
+    
+    console.log(this.state.message)
     if (!fields["user_name"]) {
       formIsValid = false;
       errors["user_name"] = "*Please enter your username.";
@@ -156,13 +162,16 @@ export default class LandingPage extends Component {
     if (typeof fields["password"] !== "undefined") {
       if (!fields["password"].match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/)) {
         formIsValid = false;
-        errors["password"] = "*Please enter secure and strong password.";
+        errors["password"] = "*Must have one uppercase letter, one lowercase letter, a number, and special character.";
       }
     }
 
     this.setState({
       errors: errors,
     });
+    this.setState({
+      message: message,
+    })
     return formIsValid;
   }
 
@@ -173,7 +182,7 @@ render() {
   <div id="main-registration-container">
       <header className="banner">
           <h1 className="app__title">QuarenTV</h1>
-          <h4 className="app__header">Let's wash our hands, stay inside, and chillout. What else are you gonna do?</h4>
+          <h4 className="app__header">Let's wash our hands, stay inside, and binge watch TV.</h4>
           </header>
           <div className="login_section">
                <form id="login_form" name="userRegistrationForm"  onSubmit= {this.submituserLoginForm} >
@@ -203,7 +212,9 @@ render() {
                   <label>Password:</label>
                   <input className="registration_forminput" type="password" name="password" value={this.state.fields.password} onChange={this.handleChange} />
                   <div className="errorMsg">{this.state.errors.password}</div>
-                  <button className="register_button">Register</button>
+                  
+                  <button name="success_message" className="register_button">Register</button>
+                  <div className="successMsg">{this.state.message.success_message}</div>
                   </form>
               </div>
             </div>
