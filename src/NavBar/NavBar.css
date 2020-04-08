@@ -8,22 +8,30 @@
     background-color: black;
     color: white;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
   }
 
 
   .nav__title {
     font-family: 'Faster One';
-    float: left;
+    display: flex;
+    align-self: flex-start;
+    padding: 5px;
   }
 
   .logout_button {
-      float: right;
+      display: flex;
+      justify-self: flex-end;
       background-color: black;
       color: white;
-      padding: 0 10px 0 10px;
+      font-size: calc(12px + .5vw);
+      padding: 5px;
+      margin-top: 5px;
   }
 
   .logout_button:hover {
     cursor: pointer;
-    color: white;
+    background-color: white;
+    color: black;
   }

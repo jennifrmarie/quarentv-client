@@ -45,10 +45,10 @@ static contextType = AppContext
                     <h3 className="form__header">What do you want to watch?</h3>
                         <div className="title_section">
                           <label className="title_label" htmlFor="title">Title</label>
-                          <input className="title_input" placeholder='Title' type="text" required name='title' id='title' />
+                          <input className="title_input" type="text" required name='title' id='title' />
                         </div>
                         <div>
-                          <label htmlFor="streaming-service">Streaming Service</label>
+                          <label className="strm_label" htmlFor="streaming-service">Streaming Service</label>
                           <select id="streaming-service" name="streaming-service">
                           <option value="...">...</option>
                             <option value="netflix">Netflix</option>

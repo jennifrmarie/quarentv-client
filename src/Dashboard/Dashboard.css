@@ -23,14 +23,14 @@
     padding-top: 5px;
     margin-bottom: 20px;
     color: white;
-    font-size: calc(15px + 1vw);
+    font-size: calc(10px + 1vw);
   }
 
   #title {
     width: 150px;
   }
   .submit_button {
-    width: 20%;
+    width: 30%;
     margin-top: 25px;
     font-size: 18px;
     font-weight: 500px;
@@ -51,7 +51,7 @@
 
   .title_input {
     margin-left: 17px;
-    font-size: 17px;
+    font-size: 15px;
     /* font-size: calc(10px + 1vw); */
   }
 
@@ -64,7 +64,7 @@
     flex-direction: column;
     color: white;
     line-height: 2em;
-    /* margin-top: 20px; */
+    margin-top: 10px;
     height: 300px;
     /* margin-bottom: 20px; */
     
@@ -90,12 +90,20 @@ and (-webkit-device-pixel-ratio: 2){
      margin: 0;
      padding: 0;
      font-size: 10px;
+     margin-top: 15px;
    }
    .title_section {
      padding: 0;
      margin: 0;
    }
+
+   .title_input {
+     font-size: 12px;
+   }
+
+
    .watch-form {
+     
      margin: 0px;
      padding: 0px;
      height: 200px;
@@ -108,7 +116,7 @@ and (-webkit-device-pixel-ratio: 2){
     width: 50%;
     font-size: 10px;
     margin: 0px;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 5px;
   }
 }
@@ -126,24 +134,41 @@ and (-webkit-device-pixel-ratio: 2){
       margin: 0;
     }
     .watch-form {
-      height: 280px;
+      height: 230px;
       padding: 0;
+      
     }
     .submit_button {
       width: 50%;
       padding: 5px;
       font-size: 12px;
-      margin-top: 10px;
+      margin-top: calc(20px + .5vw);
       margin-bottom: 0px;
+    }
+
+    .title_label {
+      font-size: 12px;
+    }
+
+    .strm_label {
+      font-size: 12px;
+    }
+
+    #streaming-service {
+      font-size: 12px;
     }
 
     .form__header {
       margin-bottom: 0;
     }
+
+    .title_input {
+      font-size: 12px;
+    }
   }
-  @media (min-width: 768px) and (max-width: 1280px) {
+  @media (min-width: 749px) and (max-width: 1280px) {
     .watch-form {
-      height: calc(300px + 1vw);
+      height: calc(300px + .5vw);
       font-size: calc(10px + 1vw);
     }
 
@@ -158,7 +183,7 @@ and (-webkit-device-pixel-ratio: 2){
     }
     .submit_button {
       width: 60%;
-      font-size: 25px;
+      font-size: 20px;
       padding: 5px;
     }
   }

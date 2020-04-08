@@ -74,11 +74,11 @@ export default class ListNav extends Component {
                 <section className="scoreboard_section">
                     <h2 className="scoreboard__title">Scoreboard</h2>
                     <ul className="scoreboard_list_section">
-                        <div>Score: {this.context.score}</div>{'\n'}
+                        <div className="score__div">Score: {this.context.score}</div>{'\n'}
                         {this.context.userBadges.map(badge => (
                         <li className="scoreboard__list">
                             {this.context.badgesMessage}{'\n'}
-                            {badge.img}
+                            {this.context.badge}
                         </li>
                          ))}{'\n'}
                         {this.context.nextMessage}
