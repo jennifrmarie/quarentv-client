@@ -47,7 +47,7 @@ static contextType = AppContext
                           <label className="title_label" htmlFor="title">Title</label>
                           <input className="title_input" type="text" required name='title' id='title' />
                         </div>
-                        <div>
+                        <div className="streaming_section">
                           <label className="strm_label" htmlFor="streaming-service">Streaming Service</label>
                           <select id="streaming-service" name="streaming-service">
                           <option value="...">...</option>

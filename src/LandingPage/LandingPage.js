@@ -177,12 +177,16 @@ render() {
           </header>
           <div className="login_section">
                <form id="login_form" name="userRegistrationForm"  onSubmit= {this.submituserLoginForm} >
-                <label>Username:</label>
+                <div className="username_div">
+                  <label>Username:</label>
                   <input className="login_input" placeholder="guest" type="text" name="user_name_login" value={this.state.fields.user_name_login} onChange={this.handleChange} />
                   <div className="errorMsg">{this.state.errors.user_name_login}</div>
+                </div>  
+                <div className="password_section">
                   <label>Password:</label>
                   <input className="login_input" type="password" placeholder="Test123!" name="password_login" value={this.state.fields.password_login} onChange={this.handleChange} />
                   <div className="errorMsg">{this.state.errors.password_login}</div>
+                </div>
                   <button className="login_button">Log In</button>
                 </form>
             </div>
