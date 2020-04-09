@@ -129,9 +129,7 @@ export default class LandingPage extends Component {
     let errors = {};
     let message = {};
     let formIsValid = true;
-    if (formIsValid === true) {
-      message["success_message"] = "Account created successfully, please log in!"
-      }
+    
     
     console.log(this.state.message)
     if (!fields["user_name"]) {
@@ -165,14 +163,19 @@ export default class LandingPage extends Component {
         errors["password"] = "*Must have one uppercase letter, one lowercase letter, a number, and special character.";
       }
     }
+    if (formIsValid === true) {
+      message["success_message"] = "Account created successfully, please log in!"
+      this.setState({
+        message: message,
+      })
+      }
 
     this.setState({
       errors: errors,
     });
-    this.setState({
-      message: message,
-    })
+    
     return formIsValid;
+    
   }
 
 
