@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faThumbsUp, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faThumbsUp, faTv, faTrashAlt, faFilm, faAward, faTrophy } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faThumbsUp, faTrashAlt)
+library.add(faThumbsUp, faTv, faFilm, faTrashAlt, faTrophy, faAward)
 
 ReactDOM.render(
   <BrowserRouter>

@@ -16,10 +16,10 @@ export default class App extends Component {
     score: 0,
     userBadges: [],
     badges: [
-      {id: 1, score: 500, name: 'badge1', img: <FontAwesomeIcon icon="thumbs-up"></FontAwesomeIcon>},
-      {id: 2, score: 1000, name: 'badge2', img: <FontAwesomeIcon icon="thumbs-up"></FontAwesomeIcon>},
-      {id: 3, score: 1500, name: 'badge3', img: <FontAwesomeIcon icon="thumbs-up"></FontAwesomeIcon>},
-      {id: 4, score: 2000, name: 'badge4', img: <FontAwesomeIcon icon="thumbs-up"></FontAwesomeIcon>},
+      {id: 1, score: 500, name: 'badge1', img: <FontAwesomeIcon icon="award"></FontAwesomeIcon>},
+      {id: 2, score: 1000, name: 'badge2', img: <FontAwesomeIcon icon="tv"></FontAwesomeIcon>},
+      {id: 3, score: 1500, name: 'badge3', img: <FontAwesomeIcon icon="film"></FontAwesomeIcon>},
+      {id: 4, score: 2000, name: 'badge4', img: <FontAwesomeIcon icon="trophy"></FontAwesomeIcon>},
     ],
     
   }
@@ -28,7 +28,6 @@ export default class App extends Component {
     this.getItems();
   }
   handleAddEntry = (entry) => {
-    console.log(entry)
     return fetch(`${config.API_ENDPOINT}/items`, {
       method: 'post',
       headers: {
@@ -40,13 +39,11 @@ export default class App extends Component {
       
   })
   .then(res => {
-    console.log(res)
     if (!res.ok)
       return res.json().then(e => Promise.reject(e))
       return res.json()
   })
   .then(entry => {
-    console.log(entry)
     this.setState({
       entries: [
         ...this.state.entries,
@@ -144,7 +141,7 @@ export default class App extends Component {
         let nextMessage
         let badgesMessage;
         if (newBadges.length > this.state.userBadges.length) {
-            badgesMessage = `You got a new badge!: '${newBadges[newBadges.length - 1].name}'` 
+            badgesMessage = `You got a new badge!` 
         }
         if (nextBadges.length > 0) {
             nextMessage = `You need ${nextBadges[0].score - score} points til your next badge` 
@@ -180,6 +177,9 @@ export default class App extends Component {
       addScore: this.addScore,
       badges: this.state.badges,
       userBadges: this.state.userBadges,
+      nextMessage: this.state.nextMessage,
+      nextBadges: this.state.nextBadges,
+      badgesMessage: this.state.badgesMessage
     }
     return (
       <AppContext.Provider value={value}>

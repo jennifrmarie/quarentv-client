@@ -71,6 +71,10 @@
     letter-spacing: .2em;
   }
 
+  .password_label {
+    margin-left: 5px;
+  }
+
   .errorMsg {
     font-size: 15px;
   }

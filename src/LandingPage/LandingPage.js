@@ -212,7 +212,7 @@ render() {
                   <input className="registration_forminput" type="text" name="user_name" value={this.state.fields.user_name} onChange={this.handleChange} />
                   <div className="errorMsg">{this.state.errors.user_name}</div>
                   
-                  <label>Password:</label>
+                  <label className="password_label">Password:</label>
                   <input className="registration_forminput" type="password" name="password" value={this.state.fields.password} onChange={this.handleChange} />
                   <div className="errorMsg">{this.state.errors.password}</div>
                   

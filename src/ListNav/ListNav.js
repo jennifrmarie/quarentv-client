@@ -74,14 +74,19 @@ export default class ListNav extends Component {
                 <section className="scoreboard_section">
                     <h2 className="scoreboard__title">Scoreboard</h2>
                     <ul className="scoreboard_list_section">
-                        <div className="score__div">Score: {this.context.score}</div>{'\n'}
-                        {this.context.userBadges.map(badge => (
-                        <li className="scoreboard__list">
-                            {this.context.badgesMessage}{'\n'}
-                            {this.context.badge}
+                        <li className="score__div">Score: {this.context.score}</li>{'\n'}
+                        
+                        {this.context.userBadges.map((item, index) =>
+                        <li key={index} className="scoreboard__list">
+                            <div className="badge_img">{item.img}</div>
+                            
                         </li>
-                         ))}{'\n'}
-                        {this.context.nextMessage}
+                        
+                        )}
+                        
+                         {'\n'}
+                         <li className="badge_message" >{this.context.badgesMessage}{'\n'}</li>
+                        <li className="next_message" >{this.context.nextMessage}</li>
                     </ul>  
                 </section>
                   {/* <section className="watched_list"> */}

@@ -35,7 +35,7 @@ body {
   }
 .DashboardList_list {
     font-family: 'Gugi';
-    letter-spacing: .5em;
+    letter-spacing: .1em;
     width: 80%;
     background: linear-gradient(
         to top,
@@ -57,25 +57,56 @@ body {
 }
 
 .scoreboard__list {
-    list-style: none;
-    width: 100%;
+    list-style-type: none;
+    align-self: center;
+    display: flex;
+    margin-bottom: 5%;
+    padding-left: 10%;
+    /* padding: 0px 10px 0px 10px; */
+    flex-grow: 50;
+    
+    /* flex-basis: 100%;; */
 }
+
+ul {
+    padding-inline-start: 0px;
+}
+
+.scoreboard_list_section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+    width: 70%;
+    padding-left: 10%;
+}
+
+
+.score__div {
+    margin-bottom: 5%;
+    list-style: none;
+    flex-basis: 100%;
+    align-self: center;
+    
+}
+
 
 .scoreboard__title {
     margin-top: 100px;
-    margin-left: 0px;
     
 }
 .scoreboard_section > .scoreboard__title {
 
     width: 92%;
-    padding: 20px 10px;
+    padding: 10px 10px;
+    
     background: inherit;
     background-attachment: fixed;
   }
   .scoreboard_section > .scoreboard__title::before {
     content: "";
-    width: 100%;
+    align-self: center;
     height: 100%;
     background: inherit;
     background-attachment: fixed;
@@ -85,16 +116,14 @@ body {
 
 .scoreboard_section {
     font-family: Audiowide;
-    display: block;
+    display: flex;
+    flex-direction: column;
     letter-spacing: .5em;
     /* margin-left: 20px; */
     text-align: center;
-    padding-right: 220px;
     justify-self: center;
-    /* margin-bottom: 20px; */
     width: 50%;
-    overflow: clipped;
-    background-size: stretch;
+    background-position: bottom;
     background: linear-gradient(
         to top,
         rgba(62, 8, 71, 0.979),
@@ -107,6 +136,20 @@ body {
     display: flex;
     width: 33%;
     margin: 0
+}
+
+.badge_message {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    margin:5% 0px 5% 0px;
+    padding-left: 10%;
+}
+
+.next_message {
+    list-style: none;
+    padding-left: 18%;
+    width: 80%;
 }
 
 h2 {
@@ -125,7 +168,7 @@ h2 {
     
 }
 li.scoreboard__list {
-    margin: 21px;
+    margin: 5px;
 }
 
 .list__title {
@@ -192,7 +235,8 @@ li.scoreboard__list {
 .scoreboard_section {
     text-align: center;
     /* display: flex; */
-    height: 70vh;
+    height: 50vh;
+    display: flex;
     padding-bottom: 0;
     width: 100%;
     background: linear-gradient(
@@ -202,29 +246,30 @@ li.scoreboard__list {
       ), url('https://i.imgur.com/gHdH0or.png');
     background-size: contain;
     background-repeat: no-repeat;
-    font-size: 15px;
-    /* text-align: left; */
-    padding-left: 90px;
+    font-size: 10px;
+    padding-right: 0px;
 }
 .score__div {
-    top: 50px;
-    position: relative;
+    align-self: center;
 }
 
 
 .scoreboard_list_section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     align-content: space-between;
     margin-top: 50px;
-    width: 70%;
-    margin-left: 15px;
+    width: 80%;
+    height: 40%;
+    
+    /* margin-left: 15px; */
 }
 
 h2.scoreboard__title {
     padding: 0px 0px;
     margin-block-start: 0em;
+    margin-bottom: -20%;
 }
 
 
@@ -247,7 +292,7 @@ h2.scoreboard__title {
 @media only screen and (min-device-width: 319px) and (max-device-width: 568px) 
 and (-webkit-device-pixel-ratio: 2){
     .scoreboard_section > .scoreboard__title {
-        top: 100px;
+        top: 50px;
         width: 100%;
     }
     .scoreboard_section > .scoreboard__title::before {
@@ -255,8 +300,48 @@ and (-webkit-device-pixel-ratio: 2){
     }
 
     .scoreboard__title {
-        margin-top: 0px;
-        margin-left: 100px;
+        margin-top: -10px;
+        
+        /* margin-left: 100px; */
+    }
+    .scoreboard_section {
+        height: 100%;
+    }
+
+    .score__div {
+        /* margin-right: 0px; */
+        margin-left: 20px;
+        width: 100%;
+    }
+    .scoreboard_list_section {
+        font-size: 10px;
+        display: flex;
+        height: 50%;
+        width: 100%;
+        margin-top: 20%;
+    }
+    .next_message {
+        width: 100%;
+        margin: 5px;
+    }
+    .badge_message {
+        padding-right:0px;
+        width: 100%;
+    }
+
+    ul {
+        margin-block-start: em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    }
+
+    .scoreboard__list {
+        display: flex;
+        padding-left:20%;
+        margin: 5px;
+        flex-shrink: 3;
+        /* margin-top: 50%; */
     }
 }
 
@@ -274,8 +359,12 @@ and (-webkit-device-pixel-ratio: 2){
     .watchlist_main {
         font-size: 20px;
         margin-bottom: 10px;
-        
+        margin-left: 3%;
         width: 95%;
+    }
+
+    ul {
+        padding-inline-start: 0px;
     }
 
     .scoreboard_section > .scoreboard__title {
@@ -306,9 +395,8 @@ and (-webkit-device-pixel-ratio: 2){
       }
 
       .scoreboard_list_section {
-          width: 67%;
+          width: 80%;
           font-size: 20px;
-          margin-right: 120px;
       }
 
       .scoreboard__title {
@@ -321,21 +409,18 @@ and (-webkit-device-pixel-ratio: 2){
     }
 }
 
-@media (min-width: 1271px) and (max-width: 1767px) {
+@media (min-width: 1271px) {
     .scoreboard_title {
         width: 100%;
         position: relative;
     }
     .scoreboard_section > .scoreboard__title {
-        width: 100%;
+        width: 80%;
         background: inherit;
         background-attachment: fixed;
     }
     .scoreboard_list_section {
-        width: 110%;
         display: flex;
-        flex-direction: column;
-        margin-left: -100px;
     }
 
     .scoreboard_section {
@@ -361,10 +446,35 @@ and (-webkit-device-pixel-ratio: 2){
     .list__title {
         font-size: 16px;
         width: 100%;
+        height: 10%;
+        margin: 0px;
     }
     .watchlist_main {
         width: 100%;
         margin-right: 45px;
+    }
+
+    .scoreboard_list_section {
+        display: flex;
+        margin-top: 25%;
+        padding: 0px;
+        width: 70%;
+    }
+
+    .badge_message {
+        margin: 0px;
+        align-self: center;
+        /* padding-right: 25%; */
+        width: 100%;
+    }
+
+    .next_message {
+        /* padding-right: 25%; */
+        height: 70%;
+    }
+    .score__div {
+        margin: 0px;
+        /* margin-right: 20%; */
     }
 
 
@@ -374,20 +484,12 @@ and (-webkit-device-pixel-ratio: 2){
         background-position-y: bottom;
         width: 100%;
         text-align: center;
-        left: 100px;
         height: 50vh;
         padding-right: 5px;
     }
 
-    .score__div {
-        position: relative;
-        top: 100px;
-        left: -50px;
-        font-size: 15px;
-    }
     .scoreboard__title {
         font-size: 15px;
-        left: -100px;
         margin-top: -50px;
         position: relative;
     }
