@@ -29,13 +29,15 @@ exports[`renders the UI as expected 1`] = `
           className="title_input"
           id="title"
           name="title"
-          placeholder="Title"
           required={true}
           type="text"
         />
       </div>
-      <div>
+      <div
+        className="streaming_section"
+      >
         <label
+          className="strm_label"
           htmlFor="streaming-service"
         >
           Streaming Service
@@ -112,14 +114,25 @@ exports[`renders the UI as expected 1`] = `
       <ul
         className="scoreboard_list_section"
       >
-        <div>
+        <li
+          className="score__div"
+        >
           Score: 
           0
-        </div>
+        </li>
         
 
         
 
+        <li
+          className="badge_message"
+        >
+          
+
+        </li>
+        <li
+          className="next_message"
+        />
       </ul>
     </section>
   </div>

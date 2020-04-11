@@ -15,7 +15,7 @@ exports[`renders the UI as expected 1`] = `
     <h4
       className="app__header"
     >
-      Let's wash our hands, stay inside, and chillout. What else are you gonna do?
+      Make a list of what you want to watch and earn points and badges when you check it off the list
     </h4>
   </header>
   <div
@@ -26,43 +26,61 @@ exports[`renders the UI as expected 1`] = `
       name="userRegistrationForm"
       onSubmit={[Function]}
     >
-      <label>
-        Username:
-      </label>
-      <input
-        className="login_input"
-        name="user_name_login"
-        onChange={[Function]}
-        placeholder="guest"
-        type="text"
-      />
       <div
-        className="errorMsg"
-      />
-      <label>
-        Password:
-      </label>
-      <input
-        className="login_input"
-        name="password_login"
-        onChange={[Function]}
-        placeholder="Test123!"
-        type="password"
-      />
+        className="username_div"
+      >
+        <label>
+          Username:
+        </label>
+        <input
+          aria-labelledby="user_name_login"
+          className="login_input"
+          id="user_name_login"
+          name="user_name_login"
+          onChange={[Function]}
+          type="text"
+        />
+        <div
+          className="errorMsg"
+        />
+      </div>
       <div
-        className="errorMsg"
-      />
+        className="password_section"
+      >
+        <label>
+          Password:
+        </label>
+        <input
+          aria-labelledby="password_login"
+          className="login_input"
+          id="password_login"
+          name="password_login"
+          onChange={[Function]}
+          type="password"
+        />
+        <div
+          className="errorMsg"
+        />
+      </div>
       <button
         className="login_button"
       >
         Log In
       </button>
     </form>
+    <button
+      className="demo_button"
+      onClick={[Function]}
+    >
+      Click here for Demo Account
+    </button>
   </div>
   <div
     id="register"
   >
-    <h3>
+    <h3
+      className="registration__header"
+    >
       Don't have an account? Register for one!
     </h3>
     <form
@@ -75,7 +93,9 @@ exports[`renders the UI as expected 1`] = `
         Email:
       </label>
       <input
+        aria-labelledby="email"
         className="registration_forminput"
+        id="email"
         name="emailid"
         onChange={[Function]}
         type="text"
@@ -87,7 +107,9 @@ exports[`renders the UI as expected 1`] = `
         Username:
       </label>
       <input
+        aria-labelledby="username"
         className="registration_forminput"
+        id="username"
         name="user_name"
         onChange={[Function]}
         type="text"
@@ -95,11 +117,15 @@ exports[`renders the UI as expected 1`] = `
       <div
         className="errorMsg"
       />
-      <label>
+      <label
+        className="password_label"
+      >
         Password:
       </label>
       <input
+        aria-labelledby="password"
         className="registration_forminput"
+        id="password"
         name="password"
         onChange={[Function]}
         type="password"
@@ -109,9 +135,13 @@ exports[`renders the UI as expected 1`] = `
       />
       <button
         className="register_button"
+        name="success_message"
       >
         Register
       </button>
+      <div
+        className="successMsg"
+      />
     </form>
   </div>
 </div>

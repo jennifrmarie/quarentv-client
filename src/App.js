@@ -22,11 +22,8 @@ export default class App extends Component {
       {id: 4, score: 2000, name: 'badge4', img: <FontAwesomeIcon icon="trophy"></FontAwesomeIcon>},
     ],
     
-  }
-  componentDidMount() {
-    // fake date loading from API call
-    this.getItems();
-  }
+  };
+
   handleAddEntry = (entry) => {
     return fetch(`${config.API_ENDPOINT}/items`, {
       method: 'post',
@@ -56,11 +53,11 @@ export default class App extends Component {
       
   })
     
-  }
+  };
 
 
   getItems = (score) => {
-    return fetch(`${config.API_ENDPOINT}/users/score`, {
+     fetch(`${config.API_ENDPOINT}/users/score`, {
       method: 'get',
       headers: {
           'content-type': 'application/json',
@@ -75,12 +72,8 @@ export default class App extends Component {
     .then(data => {   
       this.addScore(data.score)
     })
-    .catch(error => {
-      console.log({ error })
-        
-    })
     
-  }
+  };
 
   removeEntry = (entryId) => {
     return fetch(`${config.API_ENDPOINT}/items/${entryId}`, {
@@ -106,7 +99,7 @@ export default class App extends Component {
       
   })
     
-  }
+  };
 
   editItem = (entryId, entry) => {
     return fetch(`${config.API_ENDPOINT}/items/${entryId}`, {
@@ -132,7 +125,7 @@ export default class App extends Component {
     alert(error.message)
       
   })
-  }
+  };
 
   addScore = (score) => {
     const newBadge = this.state.badges
@@ -153,7 +146,7 @@ export default class App extends Component {
       badgesMessage: badgesMessage,
       nextMessage: nextMessage
     })
-  }
+  };
 
   unwatchEntry = (entryId) => {
     this.setState({
@@ -161,7 +154,7 @@ export default class App extends Component {
       entries: this.state.entries.concat(this.state.watched.find(entry => entry.id === entryId)),
       watched: this.state.watched.filter(entry => entry.id !== entryId)
     })
-  }
+  };
 
   render() {
     const value = {

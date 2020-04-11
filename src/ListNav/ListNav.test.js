@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ListNav from './ListNav';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme'
-import toJson from 'enzyme-to-json'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

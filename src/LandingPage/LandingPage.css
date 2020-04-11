@@ -3,6 +3,10 @@
   header {
     padding: 25px 15px;
   }
+
+  .demo_form {
+    display: flex;
+  }
   
   #login_form {
     display: flex;
@@ -39,7 +43,7 @@
     font-family: 'Coda';
     display: flex;
     margin-bottom: 5px;
-    font-size: calc(18px + .5vw);
+    font-size: calc(15px + .5vw);
     align-self: center;
     margin-top: -15px;
     background-color: black;
@@ -61,15 +65,31 @@
 
   .login_section {
     display: flex;
+    flex-direction: column;
     height: calc(25% + 1vw);
     justify-content: center;
   }
 
+  .demo_button {
+    margin-top: 30px;
+    font-size: 20px;
+    align-self: center;
+    padding: 5px;
+    border: 2px solid black;
+    /* width: 70%; */
+  }
   .app__title {
     font-family: 'Faster One', cursive;
     font-size: calc(30px + 1vw);
+    font-weight: 900;
+    text-shadow: black 10px 1px 10px;
+    background-color: black;
+    width: 100%;
+    opacity: 0.9;
     letter-spacing: .2em;
   }
+
+
 
   .password_label {
     margin-left: 5px;
@@ -140,9 +160,12 @@
     justify-content: space-evenly;
     color: white;
     height: 102vh;
+    width: 100%;
     margin-bottom: -10px;
     margin-top: -20px;
     background-size: contain;
+    background-attachment: fixed;
+    overflow: hidden;
     background-image: url('https://i.imgur.com/D4C9FZW.jpg');
   }
 
@@ -169,8 +192,12 @@
     #login_form {
       opacity: 1.0;
       height: 100%;
-      margin-top: -50px;;
+      margin-top: -20px;;
       padding-top: 5px;;
+    }
+
+    .demo_button {
+      margin-top: 5px;;
     }
     .login_button {
       margin-top: 10px;;
