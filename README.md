@@ -11,12 +11,11 @@ Users can create an account and login using JWT authorization, make a list of tv
 
 
 API Documentation: 
-https://murmuring-garden-64980.herokuapp.com/
 
 endpoints:
 api/dashboard/ -->  client shows form where users can post their watch list and a scoreboard.
 api/users/ --> users are able to create and account
-api/auth/ --> users can log in to account after it's been created
+api/auth/login --> users can log in to account after it's been created
 
 [Server Repo](https://github.com/jennifrmarie/quarentv-server.git)
 
